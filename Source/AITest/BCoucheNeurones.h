@@ -21,7 +21,7 @@ protected:
 
 public:
 	BCoucheNeurones(int _nbEntrees, int _taille, bool randomize = false);
-	~BCoucheNeurones();
+	virtual ~BCoucheNeurones();
 
 	// accesseurs
 	void setPoid(BMatrix const& p);
@@ -33,4 +33,8 @@ public:
 
 	// méthode principale
 	BMatrix calculeSortie(BMatrix const& entree);
+
+protected:
+	//fonction d'activation de la couche
+	virtual double fonctionActivation(double x);
 };

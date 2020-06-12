@@ -3,6 +3,7 @@
 
 #include "BCoucheNeurones.h"
 #include <stdexcept>
+#include <cmath>
 
 BCoucheNeurones::BCoucheNeurones(int _nbEntrees, int _taille, bool randomize) : nbEntrees(_nbEntrees), taille(_taille)
 {
@@ -88,6 +89,25 @@ void BCoucheNeurones::setData(double* dataArray)
 
 BMatrix BCoucheNeurones::calculeSortie(BMatrix const& entree)
 {
+	// calcul matriciel
 	BMatrix sortie = (*poid) * entree + (*biai);
+
+	// aplication de la fonction d'activation
+	for (int i = 0; i < sortie.getM(); i++)
+		for (int j = 0; j < sortie.getN(); j++)
+			sortie.set(i, j, fonctionActivation(sortie.get(i, j)));
+
 	return sortie;
+}
+
+double BCoucheNeurones::fonctionActivation(double x)
+{
+	// on choisis la tangente hyperbolique comme fonction d'activation par défaut
+	return tanh(x);
+
+	/*
+	// On choisis RELu comme fonction d'activation par défaut
+	if (x < 0) return 0;
+	return x;
+	*/
 }
