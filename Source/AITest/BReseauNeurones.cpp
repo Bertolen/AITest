@@ -3,8 +3,8 @@
 
 #include "BReseauNeurones.h"
 
-BReseauNeurones::BReseauNeurones(int _nbEntrees, int _nbSorties, int _nbCouchesCachees, int* _tailleCouchesCachees) : 
-	nbEntrees(_nbEntrees), nbSorties(_nbSorties), nbCouchesCachees(_nbCouchesCachees), tailleCouchesCachees(_tailleCouchesCachees)
+BReseauNeurones::BReseauNeurones(int _nbEntrees, int _nbSorties, int _nbCouchesCachees, int* tailleCouchesCachees) : 
+	nbEntrees(_nbEntrees), nbSorties(_nbSorties), nbCouchesCachees(_nbCouchesCachees)
 {
 	if (nbCouchesCachees < 0) nbCouchesCachees = 0;
 

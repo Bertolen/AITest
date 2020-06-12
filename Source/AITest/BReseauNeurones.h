@@ -15,12 +15,11 @@ protected:
 	int nbEntrees;
 	int nbSorties;
 	int nbCouchesCachees;
-	int* tailleCouchesCachees;
 
 	BCoucheNeurones** couchesNeurones;
 
 public:
-	BReseauNeurones(int _nbEntrees, int _nbSorties, int _nbCouchesCachees = 0, int* _tailleCouchesCachees = NULL);
+	BReseauNeurones(int _nbEntrees, int _nbSorties, int _nbCouchesCachees = 0, int* tailleCouchesCachees = NULL);
 	~BReseauNeurones();
 
 	// accesseurs
